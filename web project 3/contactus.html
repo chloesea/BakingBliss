@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BakingBless</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        img{
+            margin: 10px;
+        }
+       body{
+            text-align: center;
+        }
+        .val{
+            margin: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <script src="java.js"></script>
+
+    <section class="font">
+        <div class="container-fluid">
+    <nav class="navbar">
+        <ul class="navbar">
+            <li class="logoo"><img src="logo.jpeg" alt="logo"></li>
+            <li><a href="homepage.html">Home page</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="successstories.html">success stories</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="contactus.html">Contact us</a></li>
+            <li><a href="resourcelibrary.html">Resources</a></li>
+            <li><a href="calculate.html">Bake & Calculate</a></li>
+        </ul>
+        </nav>
+        </div>
+
+<h1>"We’d Love to Hear From You!"</h1>
+<p>"Have a question, suggestion, or just want to share your baking<br>
+ success? Reach out to us!"</p>
+<br>
+
+ <div>
+    <h3>Contact Information: </h3>
+    <p><strong>Email:</strong> <a href="mailto:contact@bakingbliss.com">contact@bakingbliss.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 234 567 890</a></p>
+    <p><strong>Address:</strong> 123 Baking Street, Cookieville, Sweetland</p>
+  </div>
+
+  <br><br>
+  <h3>Social Media:</h3>
+  <p><h6>connected with us on social media!</h></p>
+
+    <a href="https://www.instagram.com/BakingBliss" target="_blank" rel="noopener noreferrer"><image src = "instagram.jpeg" class="rounded"  alt="insta.com" width = "50" height ="50"></image></a>
+    <a href="https://www.gmail.com/" target="_blank" rel="noopener noreferrer"><image src = "gmail.jpeg" class="rounded"  alt="gmail.com" width = "50" height ="50" ></image></a>
+    <a href="https://web.telegram.org" target="_blank" rel="noopener noreferrer"><image src = "telegram.jpeg" class="rounded"  alt="telegram.com" width = "50" height ="50" ></image></a>
+    <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><image src = "tiktok.jpeg" class="rounded"  alt="tiktok.com" width = "50" height ="50" ></image></a>
+ 
+</div>
+<br>
+
+<form>
+    <fieldset>
+<legend style="background-color:rgb(57, 18, 18); color: rgb(237, 226, 215);"> Contact Us Directly:</legend>
+    <p>Use the form below to send us a message, and we’ll get back to you as soon as possible!</p>
+        <label for="name">Name (required)</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="email">Email (required)</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="subject">Subject (optional)</label>
+        <input type="text" id="subject" name="subject">
+        <br><br>
+        <label for="message">Message (required)</label>
+        <textarea id="message" name="message" value="write for us" required></textarea>
+        <br><br>
+        <!-- <button type="submit">Send Message</button> -->
+        <button type="button" class="btn btn-outline-light" style="color:rgb(57, 18, 18); border-color:rgb(57, 18, 18);">submit</button>
+        <p><h5>Check out our <a href="FAQ.html">FAQ</a> section </h5></p>
+
+    </form>
+</div>
+<br><hr>
+
+<div>
+    <form class="val" onsubmit="validateForm(event)">
+        <h1 id="sign" style="font-family:Arial, Helvetica, sans-serif; color:rgb(86, 36, 45)"></h1><br>
+        <fieldset>
+            <h2>Join our community today!</h2><br>
+            <h4>Sign up now and get started!</h4>
+            <legend style="background-color:rgb(57, 18, 18); color: rgb(237, 226, 215);"><h1>Sign Up</h1></legend>
+            <br>
+            <p>
+                <label for="FirstName">First Name</label>
+            <input class="val" type="text" placeholder="Your first name" id="name1">
+            </p>
+            <p>
+                <label for="lastName">Last Name</label>
+            <input type="text" placeholder="Your last name" id="name2"><br>
+            </p>
+            <br>
+            <p>
+                <label for="email1">Email</label>
+            <input type="email" id="email1" name="email1" required>
+            </p>
+
+            <p>
+                <label for="email2">Confirm Email</label>
+            <input type="email" id="email2" name="email2">
+            <span id="em" style="color: red;"></spain>
+            </p>
+             <br>
+             <p>
+                <label for="pass1">Password</label>
+            <input type="password" id="pass1" name="pass1" required>
+            </p>
+
+            <p>
+                <label for="pass2">Confirm Password</label>
+            <input type="password" id="pass2" name="pass2" required>
+            <span id="ps" style="color: red;"></span>
+            </p>
+            <br>
+
+            <p>Your Gender<br>
+                <p>
+            <input type="radio" name="gender" value="Female">Female<br>
+            <input type="radio" name="gender" value="Male">Male
+            </p>
+            </p>
+            <br>
+            <p>
+            <label for="yourBirthday">Your Birthday</label>
+                <input type="date" id="birthday">
+            </p>
+            <p>
+            <label for="age" >Your Age</label>
+            <input type="number" min="1" max="99">
+            </p>
+            <br>
+            <p style="font-size: large;">
+            <input type="checkbox" name="check" value="check1" id="check">I agree to receive emails from Baking Bliss!
+            </p>
+            <br>
+            <button id="sub" class="btn btn-dark" style="color:rgb(223, 166, 176);">Yes! Sign me up</button>
+
+        </fieldset>
+    </form>
+</div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

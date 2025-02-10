@@ -1,0 +1,18 @@
+Malak Hussam Al-Qaralleh
+Computer science 
+202311545
+
+Noor Mohammed Al-Yazouri
+Computer science
+202310792
+
+Lama Esam Alaaraj
+Software Engineering
+202310091
+
+
+____Our Project___
+Baking Bliss
+
+A website designed to teach the basics of cookie baking, offering detailed recipes, 
+step-by-step visuals, and tips to perfect every recipe.

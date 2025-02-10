@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="style.css">
+     <style>
+        body{
+            /* text-align: */
+            margin: 20px;
+        }
+        .val{
+            margin: 20px;
+        }
+        #dateTime {
+            position: fixed; /* Keeps it in the top-right corner */
+            top: 10px;
+            right: 10px;
+            background-color: #f9f9f9; /* Light background */
+            padding: 5px 10px;
+            border: 1px solid #ddd; /* Simple border */
+            border-radius: 5px; /* Rounded corners */
+            font-family: Arial, sans-serif; /* Clean font */
+            font-size: 14px; /* Easy-to-read font size */
+            color: #333; /* Text color */
+        }
+
+        p, div,h1{
+        color:rgb(57, 18, 18);
+        }
+     </style>
+</head>
+
+<body>
+
+    <script>
+        window.onload=function(){
+        var date=new Date();
+        var datee=date.getDate()+"-" +(date.getMonth()+1) +"-"+ date.getFullYear();
+        var timee=date.getHours()+ ":"+ date.getMinutes()+ ":"+date.getSeconds();
+        var dateTime=datee+"  "+timee;
+        document.getElementById("dateTime").textContent=dateTime;
+        }
+
+        function validateForm() {
+
+              
+document.getElementById("cookieTypeError").innerHTML = "";
+document.getElementById("quantityError").innerHTML = "";
+document.getElementById("bakingPreferenceError").innerHTML = "";
+document.getElementById("extraIngredientError").innerHTML = "";
+document.getElementById("successMessage").innerHTML = "";
+
+var valid = true;
+
+var cookieType = document.getElementById('cookieType').value;
+if (cookieType == "") {
+    document.getElementById("cookieTypeError").innerHTML = "Cookie type is required.";
+    valid = false;
+}
+
+var quantity = document.getElementById('quantity').value;
+if (quantity == "" || quantity <= 0) {
+    document.getElementById("quantityError").innerHTML = "Please enter a valid quantity.";
+    valid = false;
+}
+
+var bakingPreference = document.querySelector('input[name="bakingPreference"]:checked');
+if (!bakingPreference) {
+    document.getElementById("bakingPreferenceError").innerHTML = "Please select your baking preference.";
+    valid = false;
+}
+
+var extraIngredientSelected = document.querySelector('input[name="extraIngredient"]:checked');
+if (!extraIngredientSelected) {
+    document.getElementById("extraIngredientError").innerHTML = "Please select at least one extra ingredient.";
+    valid = false;
+}
+
+if (valid) {
+    document.getElementById("successMessage").innerHTML = "Form submitted successfully!";
+}
+
+////////////////////////////////////////
+        var caloriePerCookie = parseFloat(prompt("Enter the calories per cookie:"));
+        var cookieCount = parseInt(prompt("Enter the number of cookies you are eating:")) ;
+
+        var extraIngredientChecked = document.getElementById("extraIngredient").checked;
+        var extraCalories = 20;  // Assume extra ingredient = 20 calories
+
+    
+        var totalCalories = (caloriePerCookie + extraCalories) * cookieCount;
+    
+    
+
+///////////////////////////////////////
+
+var cookiesToBake = parseInt(prompt("Enter the number of cookies you want to bake:"));
+
+var timePerBatch = 15; // minutes
+var cookiesPerBatch = 10; // cookies per batch
+
+var batches = cookiesToBake / cookiesPerBatch;
+
+if (cookiesToBake % cookiesPerBatch !== 0) {
+    batches = batches + 1;
+}
+
+var totalTime = batches * timePerBatch;
+
+
+
+/////////////////////////////////
+
+
+var cookiesToBake = parseInt(prompt("Enter the number of cookies you want to bake:")) ;
+
+var flourPerBatch = 1; 
+var sugarPerBatch = 0.5; 
+var butterPerBatch = 0.25; 
+
+var cookiesPerBatch = 10;
+
+var batches = cookiesToBake / cookiesPerBatch;
+
+var totalFlour = batches * flourPerBatch;
+var totalSugar = batches * sugarPerBatch;
+var totalButter = batches * butterPerBatch;
+
+document.getElementById("c").innerHTML = "Total Calories: " + totalCalories+ "\n"+
+"Total baking time: " + totalTime + " minutes"+"\n"+
+"To bake " + cookiesToBake + " cookies, you will need:\n" +
+      totalFlour + " cups of flour\n" +
+      totalSugar + " cups of sugar\n" +
+      totalButter + " cups of butter";
+}
+
+</script>
+
+<div id="dateTime"></div>
+<section class="font">
+    <div class="container-fluid">
+   <nav class="navbar">
+        <ul class="navbar" >
+            <li class="logoo"><img src="logo.jpeg" alt="logo"></li>
+            <li><a href="homepage.html">Home page</a></li> 
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="successstories.html">success stories</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="contactus.html">Contact us</a></li>
+            <li><a href="resourcelibrary.html">Resources</a></li>
+            <li><a href="calculate.html">Bake & Calculate</a></li>
+        </ul>
+        </nav>
+        </div>
+
+    
+    
+            <h1>Bake Cookies & Calculate Calories!</h1>
+    
+            <div class="description">
+                
+                <p>Do you love baking cookies? Our <a style="color:rgb(223, 166, 176);"><strong>Bake and Calculate</strong></a> form is designed to help you plan your perfect batch. Simply fill in the details about the type of cookies you'd like to bake, the quantity, and any extra ingredients you want to add.</p>
+                <p>We’ll also help you figure out the total baking time based on your preferences. Plus, choose your ideal baking style — soft or crispy!</p>
+                <p>Whether you’re baking a small batch for yourself or making a big batch to share with friends, this tool makes it easy to get everything ready. Let’s start baking!</p>
+            </div>
+    
+            <form id="cookieForm" onsubmit="validateForm()">
+                <div>
+                    <label for="cookieType">Cookie Type:</label>
+                    <input type="text" id="cookieType" name="cookieType">
+                    <span id="cookieTypeError" style="color: red;"></span>
+                </div>
+                <br>
+                <div>
+                    <label for="quantity">Quantity:</label>
+                    <input type="text" id="quantity" name="quantity">
+                    <span id="quantityError" style="color: red;"></span>
+                </div>
+                <br>
+                <div>
+                    <label>Baking Preference:</label>
+                    <input type="radio" id="soft" name="bakingPreference" value="Soft"> Soft
+                    <input type="radio" id="crispy" name="bakingPreference" value="Crispy"> Crispy
+                    <span id="bakingPreferenceError" style="color: red;"></span>
+                </div>
+                <br>
+                <div>
+                    <label>Add extra ingredient:</label>
+                    <input type="checkbox" id="extraIngredient" name="extraIngredient" value="chocolate chips" checked> chocolate chips
+                    <input type="checkbox" id="extraIngredient" name="extraIngredient" value="vanilla"> vanilla
+                    <span id="extraIngredientError" style="color: red;"></span>
+                </div>
+                <br>
+               
+            </form>
+            
+            <p id="successMessage" style="color: green;"></p>
+    
+            <button onclick="validateForm()" class="btn btn-light" style="color: rgb(223, 166, 176);">Calculate</button>
+            <br>
+            <textarea id="c" rows="10" cols="25"></textarea>
+
+</section> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

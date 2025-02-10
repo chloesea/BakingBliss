@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="newh.js"></script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <p onclick="start()" style="border: 2px solid red;">if you </p>
+    <p id="answer"></p>
+    <p id="demo"></p>
+    <p id="de"></p>
+
+    <script>
+        var text, i;
+        var fruits=["ba", "ap","ma","or"];
+        text="<ul>";
+            for(i=0; i<fruits.length; i++){
+                text+="<li>" + fruits[i] +"</li>";
+            }
+            text+="</ul>";
+        document.getElementById("de").innerHTML=text;
+        test=new Array();
+        test[0]=21;
+        test[5]=22;
+        // document.getElementById("demo").innerHTML=test.length;
+        var txt='';
+        var i=0;
+        while(i<=10){
+            txt+= "<br> The number is "+i;
+            i++;
+        }
+        // document.getElementById("demo").innerHTML=txt
+        var score=45;
+        var msg='';
+        function congratulate(){
+            msg+= "Congratullations!"
+        }
+
+        if(score>=50){
+            congratulate();
+        }
+        else{
+            msg+="Hard Luck!"
+        }
+        var scores=[24,32,17];
+        var len=scores.length
+
+        document.getElementById("answer").innerHTML=msg;
+    </script>
+    
+</body>
+</html>

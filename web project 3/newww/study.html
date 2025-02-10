@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function myfun(){
+            document.getElementById("new").innerHTML="paragraph changed";
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="new"> A pragraph</p>
+    <button onclick="myfun()">Try it</button>
+    <button onclick="funn()">Try it</button>
+    <p id="demo"></p>
+    <p id="dem"></p>
+    <div id="message">Welcome to our site!</div>
+
+    <script>
+        function getArea(width, height){
+            return width*hieght;
+        }
+        document.getElementById("dem").innerHTML=getArea(3,5);
+        var msg ="sign up to receive our newsleter"
+        function update(){
+            var e=document.getElementById("message");
+            e.innerHtml=msg;
+        }
+        update();
+
+        function funn(){
+            var txt;
+            var prson=prompt("please enter your name:" );
+            if(person==null|| person==""){
+                txt="user cancelled the prompet";
+            }
+            else{
+                txt="Hello"+ person+ "! How are you today?" 
+            }
+            document.getElementById("demo").innerHtml=txt;
+        }
+        var score='seven';
+        var score2='nine';
+        window.alert(score*score2);
+    </script>
+    
+</body>
+</html>

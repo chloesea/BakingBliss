@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function changeColor(){
+            var e=document.getElementById("select");
+            var txt=e.options[e.selectedIndex].txt;
+            document.bgColor=txt;
+
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function validation(){
+            var email1=document.getElementById("email1").value;
+            var email2=document.getElementById("email2").value;
+            if(email1!= email2){
+                document.getElementById("msg").innerHTML="Email address must match";
+                return false;
+            }
+            else{
+                // document.getElementById("msg").innerHTML="";
+                return true;
+            }
+        }
+        function convert(){
+            var f=document.getElementById("f").value;
+            var c=(f-32)*5/9;
+            document.getElementById("c").innerHTML=c;
+        }
+        function getText(){
+            var txt=document.getElementById("txtbox").value;
+            alert(txt);
+        }
+        function setText(){
+            document.getElementById("txtbox").value="welcome!";
+        }
+        var d=new Date();
+        document.getElementById("date").innerHTML=d;
+
+
+
+
+        function total(){
+            var d=document.getElementById("distance").value;
+            var e=document.getElementById("ef").value;
+            var p=document.getElementById("price").value;
+            if(d<=0){
+                document.getElementById("msg").innerHTML=
+                "input must be validated to ensure it is a positive number";
+                return false;
+            }
+            else{
+                return true;
+            }
+            var req=d/e;
+            document.getElementById("txt1").innerHTML=req;
+            var cost=req*p;
+            document.getElementById("txt2").innerHTML=cost;
+        }
+    </script>
+
+
+    <form id="fuel" onsubmit="return total()">
+        <p>Distance:<input type="number" id="distance" name="distance"></p>
+        <p>Fuel efficiency
+            <select id="ef">
+                <option value="15">15 km/l</option>
+                <option value="20">20 km/l</option>
+                <option value="25">25 km/l</option>
+            </select>
+        </p>
+        <p>Fuel price:<input type="number" id="price" name="price"></p>
+        <p id="msg" style="color: red;"></p>
+        <p>Fuel required: <input type="text" id="txt1"></p>
+        <p>Fuel cost:<input type="text" id="txt2"></p>
+        <p> <input type="submit" value="submit" onclick="total()"></p>
+    </form>
+
+
+
+
+    <h2>Usine new Date</h2>
+    <p id="date"></p>
+
+    <form onsubmit="return validation()">
+        <p>Email:<input type="email" id="email1" name="email1"></p>
+        <p>Confirm Email:<input type="email" id="email2" name="email2"></p>
+        <p id="msg" style="color: red";></p>
+        <input type="submit" value="submit">
+    </form>
+    <p>Temp in Fehr: <input type="number" id="f"></p>
+    <p>Temp in Cel: </p>
+    <p id="c"></p>
+    <p><button onclick="convert()">Converte</button></p>
+    <div>
+        <textarea id="txtbox" rows="10" cols="20"></textarea>
+        <br>
+        <input type="button" value="Get text" onclick="getText()">
+        <input type="button" value="Set text" onclick="setText()">
+    </div>
+    <form>
+        <h1>Select a color</h1>
+        <select id="select" onchange="changeColor()">
+            <option>RED</option>
+            <option> BLUE</option>
+            <option>YELLOW</option>
+            <option>ORANGE</option>
+            <option>GREEN</option>
+        </select>
+    </form>
+    
+</body>
+</html>
